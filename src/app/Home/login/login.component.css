@@ -1,0 +1,158 @@
+.container {
+    background-image: url("../../../assets/login3.png");
+    /* filter:hue-rotate(180deg) brightness(1.2); */
+
+    height: 89vh !important;
+    width: 99% !important;
+    /* width: 300px; */
+    background-repeat: no-repeat;
+    background-size:  900px 800px; 
+    background-position: 50px 0px;
+
+}
+
+ @media(min-width:1200px){
+    .container{
+        max-width: 100%;
+        
+    } 
+} 
+#submit{
+    background-color: #ac9292;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+}
+.register{
+    font-size: 19px;
+    justify-content: center;
+    text-align: center;
+    
+}
+#forgot{
+    font-size: 17px;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    /* background-color:#66434360; */
+    max-width: 400px;
+    width: 100%;
+    margin-right:-860px;
+    height: 380px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+h2 {
+    font-size: 30px;
+    color: rgb(6, 7, 7);
+}
+
+.form-control {
+    border-radius: 5px;
+    padding-left: 8px;
+}
+
+.btn-primary {
+    border-radius: 5px;
+}
+
+.google_logo {
+    width: 90px;
+    height: 30px;
+}
+
+.facebook_logo {
+    height: 20px;
+    width: auto;
+    border-radius: 5px;
+    padding-top: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* /* body{
+    background-image: url("image/login_service.avif");
+    background-repeat: no-repeat;
+    background-size: 800px;
+}
+.LOGIN{
+    text-align: center;
+    color: rgb(6, 7, 7);
+    font-size: 30px;
+}
+.email{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 8px;  
+
+}
+.password{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 8px;
+}
+.login-button{
+    width: 316px;
+    height: 42px;
+    border-radius: 5px;
+    padding-left: 8px;
+    
+}
+.facebook,.google{
+    width: 155px;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 8px;
+    background-color: white;
+}
+
+.container{
+    text-align: center;
+   
+}
+.google_logo{
+    width: 100px;
+ 
+
+}
+.facebook_logo{
+    width: 100px;
+    height: 25px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.container{
+    background-color: rgba(77, 212, 212, 0.895);
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    margin-top: 150px;
+    border-radius: 10px;
+    padding-top: 10px;
+    position: absolute;
+    right: 300px;
+    
+}  */

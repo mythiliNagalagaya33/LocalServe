@@ -1,0 +1,126 @@
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  /* background-color: #f9f9f9; Removed background */
+  border-radius: 10px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); Removed box-shadow */
+  padding: 50px;
+}
+
+.tab-bar {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  color: #333; /* Default text color */
+}
+
+.tab-button:hover {
+  color: #03414D; /* Change text color on hover */
+}
+
+.tab-button.active {
+  font-weight: bold;
+  color: #03414D; /* Active text color change */
+  border-bottom: 2px solid #03414D;
+}
+
+.tab-content {
+  /* background: white; Removed background */
+  /* Removed box-shadow */
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  
+}
+
+.service-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 15px;
+  width: 300px;
+  background-color: #f9f9f9;
+  display: inline-block;
+  text-align: center;
+}
+
+.card-header {
+  background-color: #03414D;
+  color: #E6F8F6;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  padding: 10px;
+  color: #333;
+}
+
+.card-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.tab-content h3 {
+  margin-top: 0;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-content p {
+  font-size: 19px;
+  margin: 5px 0;
+}
+
+/* Optional: Style for empty states */
+.tab-content .service-card p {
+  text-align: center;
+}
+
+.tab-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+button.active {
+  background-color: transparent; /* Keep background transparent */
+  color: #007bff; /* Active text color change */
+}

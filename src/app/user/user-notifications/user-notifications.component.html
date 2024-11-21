@@ -1,0 +1,24 @@
+<div *ngIf="notifications.length > 0; else noNotifications">
+  <ul class="notification-list">
+    <li *ngFor="let notification of notifications" 
+        [ngClass]="{'unread': !notification.is_read, 'read': notification.is_read}" 
+        class="notification-item">
+      <strong>{{ notification.notification_title }}</strong>
+
+      <!-- Ensure description exists before using split -->
+      <p>
+        {{ notification.description ? notification.description.split('/user/feedback')[0] : notification.description }}
+        <a *ngIf="getBookingIdFromDescription(notification.description)" 
+           [routerLink]="['/user/feedback', getBookingIdFromDescription(notification.description)]">
+          Click to add feedback
+        </a>
+      </p>
+
+      <span class="date">{{ notification.created_at | date:'short' }}</span>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noNotifications>
+  <p class="no-notifications">No notifications found.</p>
+</ng-template>

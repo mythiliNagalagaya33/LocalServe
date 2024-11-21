@@ -1,0 +1,44 @@
+.benefits-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 20px; /* Space between cards */
+    padding: 20px; /* Padding around the entire list */
+}
+
+.card {
+    flex: 1 1 calc(50% - 20px); /* Two cards in one line with spacing */
+    border-radius: 10px; /* Rounded corners for cards */
+    overflow: hidden; /* Ensure the image fits nicely within the card */
+    position: relative; /* For proper overlay positioning */
+    background-color: #ebe0e0e1; /* Background color for visibility */
+    color: rgb(26, 24, 24); /* Text color */
+}
+
+.card-content {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center align items vertically */
+}
+
+.card-text {
+    flex: 1; /* Allow text to take up available space */
+    padding: 10px; /* Padding for text area */
+}
+
+.card-img {
+    width: 50%; /* Set image width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 0 10px 10px 0; /* Rounded corners on the right */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Size of the card title */
+    margin-bottom: 0.5rem; /* Space below title */
+    font-weight: bold; /* Bold title */
+}
+
+.card-description {
+    font-size: 0.9rem; /* Size of the card description */
+    margin: 0; /* Remove default margin */
+    font-style: italic; /* Italicize description */
+    font-weight: 700;
+}

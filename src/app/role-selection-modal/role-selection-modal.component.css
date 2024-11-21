@@ -1,0 +1,82 @@
+/* Dialog container styling */
+.role-selection-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+/* Title styling */
+.dialog-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Radio buttons styling */
+.role-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.role-radio-button {
+    font-size: 16px;
+    color: #555;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover and focus effects */
+.role-radio-button:hover, .role-radio-button:focus {
+    background-color: #e3f2fd;
+    border-color: #1976d2;
+}
+
+/* Dialog action area */
+.dialog-actions {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Continue button styling */
+.continue-button {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.continue-button:hover {
+    background-color: #1565c0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .role-selection-dialog {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .dialog-title {
+        font-size: 20px;
+    }
+
+    .continue-button {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,13 @@
+
+<!-- <h1 class="text-center">The Benefits of Using Local Services</h1> -->
+<div class="benefits-list">
+  <div class="card text-bg-dark" *ngFor="let benefit of localServiceBenefits">
+    <div class="card-content" id="card-content">
+      <div class="card-text">
+        <h5 class="card-title">{{ benefit.text }}</h5>
+        <p class="card-description">{{ benefit.description }}</p>
+      </div>
+      <img [src]="benefit.image" alt="{{ benefit.text }}" class="card-img">
+    </div>
+  </div>
+</div>

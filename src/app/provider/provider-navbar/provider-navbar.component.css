@@ -1,0 +1,58 @@
+.navbar {
+    background-color: #03414D; /* Dark background for the navbar */
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Aligns to the top */
+    left: 0; /* Aligns to the left */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Stays on top of other elements */
+  }
+  
+  h3 {
+    color: white; /* White color for h3 text */
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: #fff; /* White text color */
+    font-size: 30px;
+    /* margin-left: 5%; */
+    margin-right:80%;
+  }
+  
+  .navbar-brand:hover {
+    color: #E6F8F6; /* Hover color */
+  }
+  
+  #logo {
+    filter: brightness(1.2) saturate(1.5) hue-rotate(10deg); /* Adjust as needed */
+    border-radius: 10px;
+    height: 50px;
+    margin-left: 20px;
+  }
+  
+  .logout{
+    color:black;
+    background-color: #E6F8F6;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  
+.notification-icon {
+  color: #E6F8F6;
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: -80px;
+  position: relative; /* Add this to make the red dot position relative to the icon */
+}
+
+.notification-dot {
+  position: absolute;
+  top: -1px;  /* Adjusted to move it slightly above the icon */
+  right: -5px;  /* Adjusted to move it slightly to the right of the icon */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+}

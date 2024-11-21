@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <div class="logo">
+        <img id="logo" src="assets/logo.png" alt="Logo" />
+      </div>
+  
+      <a class="navbar-brand" href="#">LocalServe</a>
+      
+      <a routerLink="notification" routerLinkActive="active" class="notification-icon" data-bs-toggle="tooltip"
+       data-bs-placement="bottom" title="Notifications" (click)="markAllNotificationsAsRead()">
+        <i class="fas fa-bell"></i>
+        <span *ngIf="hasNewNotifications" class="notification-dot"></span>
+      </a>
+    
+   <button class="logout" (click)="onLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+
+</div>
+</nav>
+<br><br><br>

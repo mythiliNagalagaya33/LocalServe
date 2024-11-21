@@ -1,0 +1,169 @@
+/* General Container */
+.container.provider_profile {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Profile Section */
+#profile {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+#profile_photo {
+  margin-right: 25px;
+}
+
+#profile_photo img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#name {
+  flex: 1;
+}
+
+#name h1 {
+  font-size: 28px;
+  margin: 0;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+#name h3 {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+.edit {
+  background-color: #3498db;
+  border: none;
+  padding: 8px 18px;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.edit:hover {
+  background-color: #2980b9;
+}
+
+/* Provider Details Form */
+#provider_details {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+form {
+  width: 100%;
+}
+
+label {
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+p {
+  font-size: 16px;
+  color: #2c3e50;
+  margin: 0;
+  padding: 6px 0;
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #7f8c8d;
+}
+
+.btn-primary {
+  background-color: #e74c3c;
+  color: #ffffff;
+  transition: background-color 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #profile_photo {
+    margin-bottom: 15px;
+  }
+
+  #name h1 {
+    font-size: 24px;
+  }
+
+  #name h3 {
+    font-size: 16px;
+  }
+}

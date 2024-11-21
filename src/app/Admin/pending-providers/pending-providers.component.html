@@ -1,0 +1,41 @@
+<div class="pending-providers-container">
+  <h2>Pending Providers</h2>
+
+  <ul *ngIf="pendingProviders.length > 0; else noProviders">
+    <li *ngFor="let provider of pendingProviders" class="provider-card">
+      <div class="provider-details">
+        <strong class="provider-name">{{ provider.provider_name | titlecase }}</strong>
+        
+        <div class="provider-info">
+          <p><strong>Email:</strong> {{ provider.email }}</p>
+          <p><strong>Phone:</strong> {{ provider.phone_number }}</p>
+          <p><strong>City:</strong> {{ provider.city_name }}</p>
+          <p><strong>Address:</strong> {{ provider.address }}</p>
+          <p><strong>Qualification:</strong> {{ provider.qualification }}</p>
+          <p><strong>Experience:</strong> {{ provider.experience }} years</p>
+          <p><strong>Bio:</strong> {{ provider.bio }}</p>
+        </div>
+
+        <div *ngIf="provider.service_names && provider.service_names.length > 0" class="services-section">
+          <p><strong>Requesting for Services:</strong></p>
+          <ul class="service-list">
+            <li *ngFor="let service of provider.service_names">{{ service }}</li>
+          </ul>
+        </div>
+
+        <div *ngIf="!provider.service_names || provider.service_names.length === 0" class="no-services">
+          No services selected.
+        </div>
+
+        <div class="buttons">
+          <button class="approve-btn" (click)="approveProvider(provider.provider_id)">Approve</button>
+          <button class="reject-btn" (click)="rejectProvider(provider.provider_id)">Reject</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <ng-template #noProviders>
+    <p>No pending providers found.</p>
+  </ng-template>
+</div>

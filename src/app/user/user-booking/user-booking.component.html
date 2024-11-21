@@ -1,0 +1,84 @@
+<div class="container">
+  <!-- No Availability Message -->
+<div *ngIf="availableDates.length === 0" class="unavailability-message">
+  Currently, the provider is unavailable. Please choose another provider.
+</div>
+
+
+<!-- Service and Provider Details -->
+<div *ngIf="service && provider" >
+  <h2>Booking for {{ service.service_name }}</h2>
+  <p><strong>Service:</strong> {{ service.service_name }}</p>
+  <p><strong>Price:</strong> {{ service.pricing | currency }}</p>
+  <p><strong>Provider:</strong> {{ provider.provider_name }}</p>
+  <p *ngIf="provider.qualification"><strong>Qualification:</strong> {{ provider.qualification }}</p>
+  <p *ngIf="provider.experience"><strong>Experience:</strong> {{ provider.experience }} years</p>
+  <p *ngIf="provider.bio"><strong>Bio:</strong> {{ provider.bio }}</p>
+</div>
+
+<div *ngIf="availableDates.length > 0">
+  <h2>Available Dates:</h2>
+  <div class="timeline">
+    <div *ngFor="let availableDate of availableDates" 
+         class="timeline-item" 
+         [ngClass]="{'selected-date': selectedDate === availableDate.date}">
+      <div class="timeline-content" (click)="selectDate(availableDate.date)">
+        <h3>{{ availableDate.date | date: 'mediumDate' }}</h3>
+        <label>
+          <input type="radio" 
+                 name="dateSelection"
+                 (change)="selectDate(availableDate.date)" 
+                 [checked]="selectedDate === availableDate.date" />
+          Select
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Date Selection
+<div class="form-group" *ngIf="service && provider">
+  <label for="booking-date"><strong>Select Date:</strong></label>
+  <input id="booking-date" type="date" [min]="today" [(ngModel)]="selectedDate" class="form-control">
+</div> -->
+<br>
+<!-- Book Now Button -->
+<button id="booknow" class="btn btn-primary" (click)="submitBooking()" [disabled]="!selectedDate">
+  Book Now
+</button>
+
+<!-- Reviews Section -->
+
+</div>
+
+<div *ngIf="reviews.length > 0">
+  <h3>Overall Rating:</h3>
+  <div class="rating">
+    <span *ngFor="let star of getStars(averageRating)" 
+          class="rating-star" 
+          [ngClass]="{'filled': star === 1, 'empty': star === 0}">
+      ★
+    </span>
+    <p>{{ averageRating | number: '1.1-1' }} / 5</p>
+  </div>
+</div>
+
+<div class="review-section">
+  <div *ngIf="reviews.length > 0">
+    <h3>Reviews:</h3>
+    <div *ngFor="let review of reviews" class="review-card">
+      <p><strong>{{ review.user_name }}</strong></p>
+      <p><strong>Rating:</strong>
+        <span *ngFor="let star of getStars(review.rating.rating_value)" 
+              class="rating-star" 
+              [ngClass]="{'filled': star === 1, 'empty': star === 0}">
+          ★
+        </span>
+      </p>
+      <p>{{ review.comment }}</p>
+    </div>
+  </div>
+  <div *ngIf="reviews.length === 0">
+    <p>No reviews available yet.</p>
+  </div>
+</div>

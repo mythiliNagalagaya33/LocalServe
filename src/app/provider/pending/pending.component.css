@@ -1,0 +1,41 @@
+.pending-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f8f9fa; /* Light background color */
+    color: #343a40; /* Dark text color */
+    text-align: center;
+    padding: 20px;
+}
+
+.pending-container h1 {
+    font-size: 2.5em; /* Larger font for the heading */
+    margin-bottom: 20px;
+}
+
+.pending-container p {
+    font-size: 1.2em; /* Slightly larger font for the paragraph */
+    margin-bottom: 30px;
+}
+
+.button-container {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+}
+
+.button-container button {
+    background-color: #007bff; /* Bootstrap primary button color */
+    color: white; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; /* Padding for button */
+    font-size: 1em; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

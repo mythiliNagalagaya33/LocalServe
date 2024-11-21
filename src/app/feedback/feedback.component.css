@@ -1,0 +1,105 @@
+
+.feedback-container {
+  background-color: #E6F8F6;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  transform: translateY(-5px);
+  margin-top: 200px;
+}
+
+.feedback-container h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feedback-container p {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  
+}
+.stars span {
+  font-size: 3em; /* Increase the size of the stars */
+  color: #a9a3a3;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), /* Soft shadow to create depth */
+               -2px -2px 4px rgba(255, 255, 255, 0.3); /* Highlight effect for 3D look */
+}
+
+.stars span.filled {
+  color: #f7b519;
+  transform: scale(1.1); /* Slightly enlarge filled stars for emphasis */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4), /* Stronger shadow for filled stars */
+               -2px -2px 4px rgba(255, 255, 255, 0.2); /* Subtle highlight */
+}
+
+
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-style: none;
+  border-radius: 8px;
+  padding: 10px;
+  resize: vertical;
+  font-size: 0.9em;
+  box-shadow: 
+  inset -4px -4px 6px rgba(0, 0, 0, 0.1), /* Inner shadow at the top-left */
+  inset 4px 4px 6px rgba(106, 104, 104, 0.7); /* Light highlight on bottom-right for 3D effect */
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Space between the buttons */
+  margin-top: 20px; /* Space above the button group */
+}
+
+button {
+  padding: 10px 20px; /* Space inside the buttons */
+  border: none; /* Remove default border */
+  border-radius: 15px; /* Rounded corners */
+  font-size: 14px; /* Text size */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for color change */
+}
+
+button[type="submit"] {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+}
+
+button[type="submit"]:hover {
+  background-color: #03414D; /* Darker green on hover */
+  color: white;
+}
+
+button[type="button"] {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+}
+
+button[type="button"]:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+button:disabled {
+  background-color: #cccccc; /* Gray background for disabled button */
+  color: #666666; /* Darker gray text for disabled button */
+  cursor: not-allowed; /* Not allowed cursor for disabled button */
+}
+
+

@@ -1,0 +1,11 @@
+ 
+<!-- <h1>Available Services</h1> -->
+
+<div class="container">
+  <div class="service" *ngFor="let service of services">
+    <a  [routerLink]="['/user/listings', service.service_id]"> 
+      <img [src]="service.image_url" alt="{{ service.service_name }}" />
+      <div class="service-name">{{ service.service_name }}</div> <!-- Update service name -->
+    </a>
+  </div>
+</div>

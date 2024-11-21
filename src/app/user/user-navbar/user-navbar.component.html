@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <div class="logo">
+        <img id="logo" src="assets/logo.png" alt="Logo" />
+      </div>
+  
+      <a class="navbar-brand" href="#">LocalServe</a>
+      
+      <div class="navbar-search me-3" > <!-- Moved search bar here -->
+        <div class="search-container">
+          <input type="text" placeholder="Search services..." class="form-control" />
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </div>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-links"> 
+          <a routerLink="listings" routerLinkActive="active" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Services">
+            <i class="fas fa-tools"></i> 
+          </a>
+          <a routerLink="notifications" routerLinkActive="active" class="notification-icon" data-bs-toggle="tooltip"
+          data-bs-placement="bottom" title="Notifications" (click)="markAllNotificationsAsRead()">
+           <i class="fas fa-bell"></i>
+           <span *ngIf="hasNewNotifications" class="notification-dot"></span>
+         </a>
+          
+           <a routerLink="mybookings" routerLinkActive="active" id="bookingsTooltip" class="nav-link " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bookings">
+            <i class="fas fa-calendar-alt" ></i>
+          </a>
+       
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-link">
+          <li class="nav-item" id="profile-link">
+            <a routerLink="user-profile" class="nav-link">
+            <div class="profile-icon-circle">
+              <span>{{ getUserInitials(user?.user_name) }}</span>
+            </div>
+            </a>
+          </li> 
+        </ul>
+      </ul>
+      <button class="logout" (click)="onLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+
+        
+      </div>
+    </div>
+  </nav>
+  <!-- <router-outlet> </router-outlet> -->
+   <!-- <app-userdashboard></app-userdashboard> -->
+
+
+<!-- <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h5 class="modal-title" id="userModalLabel">User Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="userForm" (ngSubmit)="saveChanges()">
+       
+          <div class="mb-3">
+            <label for="userName" class="form-label text-dark">User Name</label>
+            <input type="text" id="userName" class="form-control" formControlName="user_name" >
+          </div>
+          <div class="mb-3"> 
+            <label for="email" class="form-label text-dark">Email</label>
+            <input type="email" id="email" class="form-control" formControlName="email" >
+          </div>
+          <div class="mb-3">
+            <label for="phoneNumber" class="form-label text-dark">Phone Number</label>
+            <input type="text" id="phoneNumber" class="form-control" formControlName="phone_number" value={{user?.phone_number}}>
+          </div>
+          <div class="mb-3">
+            <label for="streetAddress" class="form-label text-dark">Street Address</label>
+            <input type="text" id="streetAddress" placeholder="H.no/Street/Area" class="form-control" formControlName="street_address" value={{user?.street_address}}>
+          </div>  
+          <h1>{{user?.city_id}}</h1> -->
+          <!-- <div class="mb-3">
+            <label for="cityId" class="form-label text-dark">City</label>
+            <select id="cityId" class="form-control text-dark" formControlName="city_id" required >
+              <option value={{user?.city_id}} class="text-dark">{{user?.city_id}}</option> Placeholder option
+               <option value="">{{user?.city_id}}</option> -->
+              <!-- <option *ngFor="let city of cities" class="text-dark" [value]="city.city_id">{{ city.name }}</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+            
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+  
+   
+
+
+
+
+
+
+
+
+<!-- 
+
+<li class="nav-item">
+  <a class="nav-link" routerLink="aboutus">About Us</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" routerLink="blogs">Blogs</a>
+</li> -->

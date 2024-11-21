@@ -1,0 +1,85 @@
+
+<div class="booking-container">
+  <div class="tab-bar">
+    <button class="tab-button" (click)="showTab('pending')" [class.active]="activeTab === 'pending'">Pending Requests</button>
+    <button class="tab-button" (click)="showTab('confirmed')" [class.active]="activeTab === 'confirmed'">Confirmed Bookings</button>
+    <button class="tab-button" (click)="showTab('history')" [class.active]="activeTab === 'history'">Booking History</button>
+  </div>
+  <br>
+
+  <!-- Display details for pending requests -->
+  <div class="tab-content" *ngIf="activeTab === 'pending'">
+    <div *ngIf="pendingRequests.length > 0; else noRequests">
+      <div *ngFor="let request of pendingRequests" class="service-card">
+        <div class="card-header">Pending Request</div>
+    
+        <div class="card-body">
+          <p><strong>User Name:</strong> {{ request.user.user_name }}</p>
+          <p><strong>Phone Number:</strong> {{ request.user.phone_number }}</p>
+          <p>Booking for <strong>{{ request.service.service_name }}</strong> service</p> 
+          <p><strong>Booked On:</strong> {{ request.booking_date | date: 'longDate' }}</p>
+          <p><strong>Address:</strong> {{ request.user.street_address }}, {{ request.user.city_name }}.</p>
+        </div>
+    
+        <div class="card-footer">
+          <button class="btn accept" (click)="acceptRequest(request.booking_id)">Accept</button>
+          <button class="btn reject" (click)="rejectRequest(request.booking_id)">Reject</button>
+        </div>
+    
+        <hr>
+      </div>
+    </div>
+    
+
+        <ng-template #noRequests>
+      <p>No pending requests found.</p>
+    </ng-template>
+  </div>
+
+  <div class="tab-content" *ngIf="activeTab === 'confirmed'">
+    <h3>Confirmed Bookings</h3>
+    <div *ngIf="confirmedBookings?.length > 0; else noConfirmedBookings">
+      <div *ngFor="let booking of confirmedBookings" class="service-card">
+        <div class="card-header">Confirmed Booking</div>
+        <div class="card-body">
+          <p><strong>User Name:</strong> {{ booking.user.user_name }}</p>
+          <p><strong>Phone Number:</strong> {{ booking.user.phone_number }}</p>
+          <p>Booking for <strong>{{ booking.service.service_name }}</strong> service</p> 
+          <p><strong>Booking Date:</strong> {{ booking.booking_date | date: 'longDate' }}</p>
+          <p><strong>Address:</strong> {{ booking.user.street_address }}, {{ booking.user.city_name }}.</p>
+        </div>
+        <div class="card-footer">
+          <!-- <p>Status: {{ booking.status | titlecase }}</p>
+            -->
+          <button class="btn complete" (click)="completed(booking.booking_id)">Mark as Completed</button>
+        </div>
+        <hr>
+      </div>
+    </div>
+    <ng-template #noConfirmedBookings>
+      <p>No confirmed bookings found.</p>
+    </ng-template>
+  </div>
+  <div class="tab-content" *ngIf="activeTab === 'history'">
+    <h3>Booking History</h3>
+    <div *ngIf="bookingHistory.length > 0; else noBookingHistory">
+      <div *ngFor="let history of bookingHistory" class="service-card">
+        <div class="card-header">Completed Booking</div>
+        <div class="card-body">
+          <p><strong>User Name:</strong> {{ history.user.user_name }}</p>
+          <p><strong>Phone Number:</strong> {{ history.user.phone_number }}</p>
+          <p>Booking for <strong>{{ history.service.service_name }}</strong> service</p> 
+          <p><strong>Booking Date:</strong> {{ history.booking_date | date: 'longDate' }}</p>
+          <p><strong>Address:</strong> {{ history.user.street_address }}, {{ history.user.city_name }}.</p>
+        </div>
+        <div class="card-footer">
+          <p>Status: Completed</p>
+        </div>
+        <hr>
+      </div>
+    </div>
+    <ng-template #noBookingHistory>
+      <p>No booking history found.</p>
+    </ng-template>
+  </div>
+</div>

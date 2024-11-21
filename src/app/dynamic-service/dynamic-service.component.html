@@ -1,0 +1,37 @@
+<div *ngIf="service" class="service-container">
+    <h2 class="service-name">{{ service.service_name }}</h2>
+    <div class="service-details">
+        <div class="service-description">
+            <p>{{ service.description }}</p>
+        </div>
+        <img src="../../assets/service/{{service.service_name}}.png" alt="{{ service.service_name }}" class="service-img" />
+    </div>
+    <p class="service-price"><strong>Price:</strong> {{ service.pricing | currency }}</p>
+  </div>
+  
+  <div *ngIf="service && service.providers && service.providers.length > 0" class="providers-section">
+    <h3>Providers:</h3>
+    <div class="providers-list">
+      <div *ngFor="let provider of service.providers" class="provider-card">
+        <div class="provider-info">
+          <strong>{{ provider.provider_name }}</strong><br>
+          <span>Email: {{ provider.email }}</span><br>
+          <span>Phone: {{ provider.phone_number }}</span><br>
+          <span>Address: {{ provider.address }}</span><br>
+          <!-- <span>Status: {{ provider.status }}</span>  -->
+        </div>
+        <div class="provider-action">
+          <button class="btn btn-primary" id="booknow" (click)="bookProvider(provider, service)">Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p *ngIf="service && (!service.providers || service.providers.length === 0)">
+    No providers available for this service.
+  </p>
+  
+  <div *ngIf="!service">
+    <p>Loading...</p>
+  </div>
+  

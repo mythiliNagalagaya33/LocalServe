@@ -1,0 +1,59 @@
+<div class="booking-container">
+  <div class="tab-bar">
+    <button class="tab-button" (click)="showTab('pending')" [class.active]="activeTab === 'pending'">Pending</button>
+    <button class="tab-button" (click)="showTab('confirmed')" [class.active]="activeTab === 'confirmed'">Confirmed</button>
+    <button class="tab-button" (click)="showTab('rejected')" [class.active]="activeTab === 'rejected'">Rejected</button>
+    <button class="tab-button" (click)="showTab('completed')" [class.active]="activeTab === 'completed'">Completed</button>
+  </div>
+
+  <div class="tab-content" *ngIf="activeTab === 'pending'">
+    <!-- <h3>Pending Bookings</h3> -->
+    <div *ngFor="let booking of pendingRequests" class="service-card">
+      <div class="card-header">Pending</div>
+      <div class="card-body">
+        <p><strong>Service:</strong> {{ booking.service.service_name }}</p>
+        <p><strong>Provider:</strong> {{ booking.availability.provider.provider_name }}</p>
+        <p><strong>Date:</strong> {{ booking.booking_date | date: 'mediumDate' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" *ngIf="activeTab === 'confirmed'">
+    <!-- <h3>Confirmed Bookings</h3> -->
+    <div *ngFor="let booking of confirmedBookings" class="service-card">
+      <div class="card-header">Confirmed</div>
+      <div class="card-body">
+        <p><strong>Service:</strong> {{ booking.service.service_name }}</p>
+        <p><strong>Provider:</strong> {{ booking.availability.provider.provider_name }}</p>
+        <p><strong>Date:</strong> {{ booking.booking_date | date: 'mediumDate' }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-content" *ngIf="activeTab === 'rejected'">
+    <div *ngIf="rejectedBookings.length === 0">
+      <p>There are no rejected bookings.</p>
+    </div>
+    <div *ngFor="let booking of rejectedBookings" class="service-card">
+      <div class="card-header">Rejected</div>
+      <div class="card-body">
+        <p><strong>Service:</strong> {{ booking.service.service_name }}</p>
+        <p><strong>Provider:</strong> {{ booking.availability.provider.provider_name }}</p>
+        <p><strong>Date:</strong> {{ booking.booking_date | date: 'mediumDate' }}</p>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="tab-content" *ngIf="activeTab === 'completed'">
+    <!-- <h3>Completed Bookings</h3> -->
+    <div *ngFor="let booking of completedBookings" class="service-card">
+      <div class="card-header">Completed</div>
+      <div class="card-body">
+        <p><strong>Service:</strong> {{ booking.service.service_name }}</p>
+        <p><strong>Provider:</strong> {{ booking.availability.provider.provider_name }}</p>
+        <p><strong>Date:</strong> {{ booking.booking_date | date: 'mediumDate' }}</p>
+      </div>
+    </div>
+  </div>
+</div>

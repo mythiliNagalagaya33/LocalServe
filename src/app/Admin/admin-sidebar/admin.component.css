@@ -1,0 +1,70 @@
+/* General reset and basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #E6F8F6;
+  color: black;
+  padding: 20px;
+  height: 93vh;
+  position: sticky;
+  top: 0;
+  margin-top: 0px;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+/* Link Styles */
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: black; /* Default text color */
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: white; /* Default background color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+}
+
+/* Active Link Styles */
+.sidebar nav ul li a.active {
+  background-color: #094e5c; /* Active background color */
+  color: white; /* Active text color */
+}
+
+/* Hover Styles for Links */
+.sidebar nav ul li a:hover {
+  background-color: #094e5c; /* Hover background color */
+  color: white; /* Hover text color */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  .dashboard-overview {
+    grid-template-columns: 1fr;
+  }
+}

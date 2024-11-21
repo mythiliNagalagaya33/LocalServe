@@ -1,0 +1,138 @@
+/* Styling for the body to ensure overall alignment */
+.container {
+    font-family: Arial, sans-serif;
+    background-image: url("../../../assets/login3.png");
+    background-repeat: no-repeat;
+    background-size: 900px 800px;
+    background-position: 54px 4px;
+    height: 89vh !important;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* Container for the form */
+form#registrationForm {
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    margin-right: -850px;
+    height: auto;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Heading style */
+h2 {
+    font-size: 30px;
+    color: rgb(6, 7, 7);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling for fieldset */
+fieldset {
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    margin-left: 750px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Styling for form groups */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: rgb(6, 7, 7);
+    margin-left: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Styling for error messages */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Submit button styling */
+.form-group input[type="submit"] {
+    background-color: #ac9292;
+    color: white;
+    border-radius: 5px;
+    width: 90%;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 40px;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #a07f7f; /* Slightly darker shade for hover effect */
+}
+
+/* Focus effect for input fields */
+input:focus {
+    border-color: #3f51b5; /* Deep blue border */
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 0 0 10px rgba(63, 81, 181, 0.5), inset 0 0 5px rgba(63, 81, 181, 0.3); /* 3D effect */
+    outline: none;
+}
+
+
+#city_name {
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+#service_name {
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+#wrong_symbol {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    border: none;
+    cursor: pointer;
+    padding-left: 10px;
+    background-color: transparent;
+}

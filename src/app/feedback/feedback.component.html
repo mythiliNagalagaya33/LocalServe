@@ -1,0 +1,69 @@
+
+<div class="feedback-container" >
+  <h2>Rate your experience</h2>
+  <p>We highly value your feedback! Kindly take a moment to rate your experience and provide us with your valuable feedback.</p>
+  
+  <!-- Rating Stars -->
+  <div class="stars">
+    <span *ngFor="let star of starsArray; let i = index"
+          (click)="rateExperience(i + 1)"
+          [class.filled]="i < feedbackForm.controls['rating'].value">★</span>
+  </div>
+  
+  <!-- Feedback Textarea using Reactive Forms -->
+  <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+    <textarea placeholder="Tell us about your experience!"
+              formControlName="comments"></textarea>
+    
+    <!-- Submit and Cancel Buttons -->
+    <div class="button-group">
+      <button type="submit" [disabled]="feedbackForm.invalid">Send</button>
+      <button type="button" (click)="closeFeedbackForm()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="feedback-container">
+  <h2>Rate your experience</h2>
+  <p>We highly value your feedback! Kindly take a moment to rate your experience and provide us with your valuable feedback.</p>
+  
+  Rating Stars -->
+  <!-- <div class="stars">
+    <span *ngFor="let star of starsArray; let i = index"
+          (click)="rateExperience(i + 1)"
+          [class.filled]="i < feedback.rating">★</span>
+  </div> -->
+  
+  <!-- Feedback Textarea using reactive forms -->
+  <!-- <textarea placeholder="Tell us about your experience!"
+          [(ngModel)]="feedback.comments" 
+          name="comment"></textarea> -->
+
+  
+  <!-- Submit and Cancel Buttons -->
+  <!-- <div class="button-group">
+    <button (click)="submitFeedback()">Send</button>
+    <button type="button" (click)="closeFeedbackForm()">Cancel</button>
+  </div>
+</div> --> 

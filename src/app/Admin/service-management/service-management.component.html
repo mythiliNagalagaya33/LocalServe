@@ -1,0 +1,55 @@
+<div class="service-management">
+    <h2>Service Management</h2>
+    
+    <!-- <h3>All Services</h3> -->
+    <div class="service-list">
+      <div *ngFor="let service of services" class="service-item">
+        <h4 class="service-name">{{ service.service_name }}</h4>
+        <div *ngIf="service.image_url" class="service-image-container">
+          <img id="image" [src]="service.image_url" alt="{{ service.service_name }} image" class="service-image">
+        </div>
+        <!-- <p class="service-description">{{ service.description }}</p> -->
+        <p class="service-pricing">Price: ${{ service.pricing }}</p>
+      </div>
+    </div>
+
+    <button (click)="toggleAddService()" class="btn-submit">
+      {{ isAddServiceVisible ? 'Cancel' : 'Add Service' }}
+    </button>
+
+    <div *ngIf="isAddServiceVisible" class="service-form">
+      <h3>Add New Service</h3>
+      <form [formGroup]="newServiceForm" (ngSubmit)="addService()">
+        <div class="form-group">
+          <label for="serviceName">Service Name:</label>
+          <input id="serviceName" formControlName="service_name" required />
+          <div *ngIf="newServiceForm.get('service_name')?.invalid && newServiceForm.get('service_name')?.touched">
+            <small class="error">Service Name is required.</small>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" formControlName="description" rows="3"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="pricing">Pricing:</label>
+          <input id="pricing" type="number" formControlName="pricing" required />
+          <div *ngIf="newServiceForm.get('pricing')?.invalid && newServiceForm.get('pricing')?.touched">
+            <small class="error">Pricing is required and must be non-negative.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="imageUrl">Image URL:</label>
+          <input id="imageUrl" formControlName="image_url" required placeholder="Enter image URL" />
+          <div *ngIf="newServiceForm.get('image_url')?.invalid && newServiceForm.get('image_url')?.touched">
+            <small class="error">Image URL is required.</small>
+          </div>
+        </div>
+    
+        <button type="submit" class="btn-submit" [disabled]="newServiceForm.invalid">Add Service</button>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+<div class="container provider_profile">
+  <div id="profile">
+    <div id="profile_photo">
+      <img
+        src="https://www.shutterstock.com/image-vector/default-avatar-profile-icon-social-600nw-1677509740.jpg"
+        alt="Profile Photo"
+      />
+    </div>
+    <div id="name">
+      <h1>{{ provider?.provider_name }}</h1>
+      <h3>{{ provider?.email }}</h3>
+      <button (click)="toggleEdit()" class="btn btn-primary mt-4 edit">Edit Profile</button>
+    </div>
+  </div>
+
+  <div id="provider_details">
+    <form class="d-flex flex-column" [formGroup]="editForm" (ngSubmit)="saveChanges()">
+      <!-- Provider Name -->
+      <div *ngIf="isEditable; else readOnlyProvider">
+        <label for="provider_name" class="fs-5">Provider Name</label>
+        <input formControlName="provider_name" type="text" id="provider_name" />
+      </div>
+      <ng-template #readOnlyProvider>
+        <p>{{ provider?.provider_name }}</p>
+      </ng-template>
+
+      <!-- Email -->
+      <div *ngIf="isEditable; else readOnlyEmail">
+        <label for="email" class="fs-5">Email</label>
+        <input formControlName="email" type="email" id="email" />
+      </div>
+      <ng-template #readOnlyEmail>
+        <p>{{ provider?.email }}</p>
+      </ng-template>
+
+      <!-- Phone Number -->
+      <div *ngIf="isEditable; else readOnlyPhoneNumber">
+        <label for="phone_number" class="fs-5">Phone Number</label>
+        <input formControlName="phone_number" type="text" id="phone_number" />
+      </div>
+      <ng-template #readOnlyPhoneNumber>
+        <p>{{ provider?.phone_number }}</p>
+      </ng-template>
+
+      <!-- Address -->
+      <div *ngIf="isEditable; else readOnlyAddress">
+        <label for="address" class="fs-5">Address</label>
+        <input formControlName="address" type="text" id="address" />
+      </div>
+      <ng-template #readOnlyAddress>
+        <p>{{ provider?.address }}</p>
+      </ng-template>
+
+      <!-- Qualification -->
+      <div *ngIf="isEditable; else readOnlyQualification">
+        <label for="qualification" class="fs-5">Qualification</label>
+        <input formControlName="qualification" type="text" id="qualification" />
+      </div>
+      <ng-template #readOnlyQualification>
+        <p>{{ provider?.qualification }}</p>
+      </ng-template>
+
+      <!-- Experience -->
+      <div *ngIf="isEditable; else readOnlyExperience">
+        <label for="experience" class="fs-5">Experience (in years)</label>
+        <input formControlName="experience" type="number" id="experience" />
+      </div>
+      <ng-template #readOnlyExperience>
+        <p>{{ provider?.experience }} years</p>
+      </ng-template>
+
+      <!-- Bio -->
+      <div *ngIf="isEditable; else readOnlyBio">
+        <label for="bio" class="fs-5">Bio</label>
+        <textarea formControlName="bio" id="bio"></textarea>
+      </div>
+      <ng-template #readOnlyBio>
+        <p>{{ provider?.bio }}</p>
+      </ng-template>
+
+
+      <!-- Service Section -->
+      <div id="services">
+        <div *ngIf="services.length === 1">
+          <p>{{ services[0]?.name }}</p> <!-- Show single service -->
+        </div>
+        <div *ngIf="services.length > 1">
+          <p>Your services:</p>
+          <ul>
+            <li *ngFor="let service of services">{{ service.service_name }}</li> <!-- List multiple services -->
+          </ul>
+        </div>
+        <div *ngIf="services.length === 0">
+          <p>No services available</p> <!-- Fallback if no services are available -->
+        </div>
+      </div>
+
+      <!-- City -->
+      <div *ngIf="isEditable">
+        <label for="city_id" class="fs-5">City</label>
+        <select formControlName="city_id" id="city_id" class="form-control">
+          <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
+        </select>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeProfile()">Cancel</button>
+        <button class="btn btn-primary" (click)="saveChanges()" [hidden]="!isEditable">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

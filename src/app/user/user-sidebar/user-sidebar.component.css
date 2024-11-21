@@ -1,0 +1,37 @@
+.sidebar {
+    width: 265px; /* Width of the sidebar */
+    background-color: #3B3030; /* Background color */
+    color: #ffffff; /* Text color */
+    height: 100vh; /* Full height */
+    padding: 15px; /* Padding inside the sidebar */
+    position: fixed; /* Keep it fixed on the left */
+    margin-left: -20px;
+    margin-top: -7px;
+  }
+  
+  .sidebar-nav {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .sidebar-nav li {
+    margin-bottom: 15px; /* Space between items */
+  }
+  
+  .sidebar-nav a {
+    color: #ffffff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size */
+    display: block; /* Full width */
+    padding: 10px; /* Padding for better click area */
+    transition: background 0.3s; /* Transition for hover effect */
+  }
+  
+  .sidebar-nav a:hover {
+    background-color: #a36d27; /* Hover color */
+  }
+  
+  .active {
+    background-color: #a36d27; /* Active link color */
+  }
+  

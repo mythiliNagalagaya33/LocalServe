@@ -1,0 +1,22 @@
+
+<div class="sidebar">
+    <div id="profile" class="profile">
+        <!-- Display profile image if available, otherwise show default icon
+        <ng-container *ngIf="profileImage; else defaultImageTemplate">
+          <img [src]="profileImage" alt="Profile Photo" class="profile-img">
+        </ng-container>
+        <ng-template #defaultImageTemplate>
+          <i class="fas fa-user-circle" style="font-size: 80px; color: #094e5c;"></i> Profile icon when no image is available -->
+        <!-- </ng-template>  -->
+        <br>
+      <h3>Hi, {{ service_provider?.provider_name || 'Provider Name' }}</h3> <!-- Use safe navigation and fallback text -->
+    </div>
+    <ul class="sidebar-nav">
+      <li><a routerLink="bookings" routerLinkActive="active">Bookings</a></li>
+      <!-- <li><a routerLink="notification" routerLinkActive="active">Notifications</a></li> -->
+      <li><a routerLink="/reviews" routerLinkActive="active">Reviews and Feedback</a></li>
+      <li><a routerLink="profile" routerLinkActive="active">My Profile</a></li>
+      <li><a routerLink="availability" routerLinkActive="active">Add Availability</a></li>
+    </ul>
+  </div>
+  

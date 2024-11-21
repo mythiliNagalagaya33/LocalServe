@@ -1,0 +1,17 @@
+<mat-dialog-content class="role-selection-dialog">
+    <h2 class="dialog-title">{{ message }}</h2>
+    <mat-radio-group [(ngModel)]="selectedRole" class="role-radio-group">
+      <mat-radio-button
+        *ngFor="let role of roles"
+        [value]="role.role"
+        class="role-radio-button"
+      >
+        {{ role.role }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions class="dialog-actions">
+    <button mat-button class="continue-button" (click)="selectRole()">Continue</button>
+  </mat-dialog-actions>
+  

@@ -1,0 +1,84 @@
+/* General reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 250px; /* Sidebar width */
+    background-color: #E6F8F6; /* Sidebar background */
+    color: black; /* Text color */
+    padding: 20px;
+    height: 92vh; /* Sidebar height */
+    position: sticky;
+    top: 0; /* Keep it fixed on top */
+    margin-top: 0;
+  }
+  
+  .profile {
+    text-align: center; /* Center-align profile */
+    margin-bottom: 20px; /* Space below profile */
+  }
+  
+  .profile img {
+    width: 80px; /* Profile image size */
+    height: 80px; /* Maintain square aspect */
+    border-radius: 50%; /* Make image circular */
+    object-fit: cover;
+  }
+  
+  .profile {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  /* Sidebar Navigation Styles */
+  .sidebar-nav {
+    list-style-type: none; /* Remove bullet points */
+  }
+  
+  .sidebar-nav li {
+    margin: 15px 0; /* Space between items */
+  }
+  
+  /* Link Styles */
+  .sidebar-nav li a {
+    text-decoration: none;
+    color: black; /* Default text color */
+    display: block;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: white; /* Default background */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover/active states */
+  }
+  
+  /* Active Link Styles */
+  .sidebar-nav li a.active {
+    background-color: #094e5c; /* Active background color */
+    color: white; /* Active text color */
+  }
+  
+  /* Hover Styles for Links */
+  .sidebar-nav li a:hover {
+    background-color: #094e5c; /* Hover background color */
+    color: white; /* Hover text color */
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%; /* Full width for sidebar */
+      height: auto; /* Allow sidebar to grow vertically */
+    }
+  
+    .sidebar-nav {
+      margin-top: 20px; /* Space before nav items */
+    }
+  
+    .profile {
+      margin-bottom: 15px; /* Less space below profile */
+    }
+  }
+  

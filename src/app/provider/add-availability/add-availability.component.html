@@ -1,0 +1,39 @@
+<div class="availability-form-container">
+    <form (ngSubmit)="onSubmit()">
+        <!-- Date Field -->
+        <div class="form-group">
+            <label for="date">Availability Date</label>
+            <input type="date" id="date" name="date" class="form-control" [min]="minDate" [max]="maxDate" [(ngModel)]="availability.date" required>
+        </div>
+    
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="btn-submit">Save Availability</button>
+        </div>
+    </form>
+</div>
+
+<div class="availabilities-table-container">
+    <h2>Your Availabilities</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let availability of availabilities">
+                <td>{{ availability.date }}</td>
+                <td>{{ availability.status }}</td>
+                <td>
+                    <button (click)="deleteAvailability(availability.availability_id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr *ngIf="availabilities.length === 0">
+                <td colspan="3">No availabilities found. Please add availability.</td> <!-- Update colspan to 3 -->
+            </tr>
+        </tbody>
+    </table>
+</div>

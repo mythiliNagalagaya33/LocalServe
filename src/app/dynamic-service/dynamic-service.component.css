@@ -1,0 +1,147 @@
+/* Service Container Styles */
+.service-container {
+    max-width: 1000px; /* Limit width of the service container */
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Padding inside the service container */
+    background-color: #f8f9fa; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 40px; /* Space below service container */
+}
+
+/* Service Name */
+.service-name {
+    text-align: center; /* Center the service name */
+    margin-bottom: 20px; /* Space below the service name */
+    font-size: 1.8rem; /* Larger font size */
+    font-weight: bold; /* Bold font */
+}
+
+/* Service Details Flex Layout */
+.service-details {
+    display: flex; /* Flexbox layout */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between the description and the image */
+}
+
+/* Service Description */
+.service-description {
+    flex: 1; /* Allow the description to take up remaining space */
+}
+
+/* Service Image */
+.service-img {
+    width: 300px; /* Set width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); /* Optional: add a small shadow for effect */
+}
+
+/* Service Price */
+.service-price {
+    text-align: center; /* Center the price */
+    margin-top: 20px; /* Space above the price */
+    font-size: 1.2rem; /* Larger font size for the price */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Providers Section */
+.providers-section {
+    margin-top: 40px; /* Space above providers section */
+    max-width: 1000px; /* Match the width of the service container */
+    margin: 0 auto; /* Center the providers section */
+}
+
+/* Providers List */
+.providers-list {
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 20px; /* Space between each provider card */
+    justify-content: space-between; /* Evenly space cards */
+}
+
+/* Provider Card */
+.provider-card {
+    flex: 1 1 calc(50% - 20px); /* Two cards per row */
+    display: flex; /* Flexbox layout for each card */
+    justify-content: space-between; /* Distribute space between provider info and button */
+    align-items: center; /* Align items vertically centered */
+    padding: 15px; /* Internal padding for the card */
+    border: 1px solid #ccc; /* Border for the card */
+    border-radius: 10px; /* Rounded corners for the card */
+    background-color: #f9f9f9; /* Light background color for contrast */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Optional: add a shadow to the card */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+    .provider-card {
+        flex: 1 1 calc(100% - 20px); /* One card per row on smaller screens */
+    }
+}
+
+/* Provider Info */
+.provider-info {
+    flex-grow: 2; /* Take up available space */
+    font-size: 1rem; /* Set the font size */
+    line-height: 1.5; /* Add line spacing for readability */
+}
+
+/* Provider Rating (if applicable) */
+.rating {
+    color: gold; /* Gold color for the rating stars */
+    font-size: 1.2rem; /* Slightly larger font for the rating */
+    margin-top: 5px; /* Space above the rating */
+}
+
+/* Provider Action (Book Now Button) */
+.provider-action {
+    display: flex; /* Flexbox for the action button */
+    align-items: center; /* Center the button vertically */
+    justify-content: flex-end; /* Align the button to the right */
+}
+
+/* Book Now Button */
+.book-now-btn {
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #28a745; /* Green background for the button */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Set font size */
+}
+
+/* Book Now Button Hover Effect */
+.book-now-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Loading State */
+.loading-message {
+    text-align: center; /* Center loading message */
+    font-size: 1.2rem; /* Larger font size */
+    margin-top: 50px; /* Space above the loading message */
+    color: #666; /* Light color for the text */
+}
+
+/* Remove default list styles for the ul and li */
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    margin: 10px 0; /* Space between list items */
+}
+#booknow{
+    background-color: #03414D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 10px 0;
+}

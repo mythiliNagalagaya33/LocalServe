@@ -1,0 +1,105 @@
+<br>  
+
+<div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+  <!-- Carousel Items (Slides) -->
+   
+  <div class="carousel-inner">
+    <!-- Slide 5: Plumbing Service -->
+
+
+    <div class="carousel-item active" >
+      <img src="./assets/paint.jpg" class="d-block w-100" alt="Painting service" >
+      <div class="carousel-caption text-start">
+        <!-- <h1>Expert Painting Services</h1> -->
+        <!-- <p>Transform your space with professional interior and exterior painting.</p> -->
+        <!-- <a href="#" class="btn btn-primary">Get Service</a>  -->
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./assets/slide8p.png" class="d-block w-100" alt="Plumber service">
+      <div class="carousel-caption text-start">
+        <!-- <h1>Plumbing Services & Repairs</h1> -->
+        <!-- <p>From leaks to installations, trust our certified plumbers to fix it fast.</p> -->
+        <!-- <a href="#" class="btn btn-primary" >Get Service</a>  -->
+      </div>
+    </div>
+    <!-- Slide 1: Cleaning Service -->
+    <div class="carousel-item ">
+      <img src="./assets/slide1c.jpeg" class="d-block w-100" alt="Cleaning service">
+      <div class="carousel-caption text-start">
+        <!-- <h1>Professional Cleaning Services</h1> -->
+        <!-- <p>Keep your home or office spotle  ss with our expert cleaning team.</p> -->
+        <!-- <a href="#" class="btn btn-primary">Get Service</a>  -->
+
+      </div>
+    </div>
+    
+    <!-- Slide 2: Washing Machine Service -->
+    <div class="carousel-item">
+      <img src="./assets/gardening1.png" class="d-block w-100" alt="Washing machine service">
+      <div class="carousel-caption text-start">
+        <!-- <h1>Gardening</h1> -->
+        <!-- <p>Ensure your washing machine is in top shape with our reliable service.</p> -->
+        <!-- <a href="#" class="btn btn-primary">Get Service</a>  -->
+      </div>
+    </div>
+    
+    <!-- Slide 3: Electric Service -->
+    <!-- <div class="carousel-item">
+      <img src="./assets/slide4e.png" class="d-block w-100" alt="Electric service">
+      <div class="carousel-caption text-start">
+        <h1>Electrical Installations & Repairs</h1>
+        <p>From wiring to repairs, we handle all your electrical needs safely.</p>
+         <a href="#" class="btn btn-primary">Contact Us</a> -->
+      <!-- </div>
+    </div>  -->
+    
+    <!-- Slide 4: Painting Service -->
+  
+    
+    
+  </div>
+
+  <!-- Indicators (Circles) -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+
+  <!-- Controls (Previous/Next Arrows) -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
+
+
+<div class="service-slider-container">
+
+  <div class="container" #sliderContainer>
+      <button class="arrow left-arrow" (click)="scrollLeft()" [disabled]="currentIndex === 0">&#8249;</button> <!-- Left arrow -->
+
+     <div class="container">
+      <div class="service" *ngFor="let service of getVisibleServices()">
+        <a [routerLink]="['/user/listings', service.service_id]" class="text-decoration-none">
+          <img [src]="service.image_url" alt="{{ service.service_name }}" />
+          <div class="service-name">{{ service.service_name }}</div>
+        </a>
+      </div>
+     </div>
+   
+    <button class="arrow right-arrow" (click)="scrollRight()" [disabled]="currentIndex + itemsPerPage >= services.length">&#8250;&#8250;</button> <!-- Right arrow -->
+
+  </div>
+
+</div>
+
+<button><a [routerLink]="['/user/feedback','381e9beb-ce2b-4a2d-b1ff-61f0481d9f5f']"  class="btn btn-primary">Get Service"</a></button>

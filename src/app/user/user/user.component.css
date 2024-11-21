@@ -1,0 +1,29 @@
+.layout-container {
+  display: flex;
+  flex-direction: column; /* Stack navbar and main content vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+app-user-navbar {
+  flex: 0 0 60px; /* Fixed height for the navbar */
+  background-color: #343a40; /* Example background color */
+  color: white; /* Example text color */
+  
+}
+
+.main-content {
+  display: flex;
+  flex: 1; /* Takes the remaining space below the navbar */
+}
+
+app-user-sidebar {
+  flex: 0 0 250px; /* Set a fixed width for the sidebar */
+  background-color: #f0f0f0; /* Example background color */
+  padding: 20px; /* Optional padding */
+}
+
+.router-outlet-container {
+  flex: 1; /* Fills the remaining space next to the sidebar */
+  padding: 20px; /* Optional padding */
+  overflow-y: auto; /* Allows scrolling if content overflows */
+}

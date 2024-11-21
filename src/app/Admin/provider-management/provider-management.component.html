@@ -1,0 +1,39 @@
+<section id="provider-management">
+    <h3>List of All Service Providers</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Provider Name</th>
+          <th>Service Name</th>
+          <th>Email</th>
+          <th>City</th>
+          <th>Phone Number</th>
+          <th>Status</th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let provider of providers">
+          <td>{{ provider.provider_name }}</td>  
+          <td>{{ provider.service_name }}</td>
+          <td>{{ provider.email }}</td>
+          <td>{{ provider.city }}</td>
+          <td>{{ provider.phone_number }}</td>
+          <td>{{provider.status | titlecase}}</td>
+
+          <td><button class="text-white w-75"
+            (click)="toggleStatus(provider)"
+            [ngStyle]="{ 
+              'backgroundColor': provider.status === 'Available' ? '#dc3545' : 'green', 
+              'cursor': provider.status === 'pending' || provider.status === 'rejected' ? 'not-allowed' : 'pointer' ,
+            }"
+            [disabled]="provider.status === 'pending' || provider.status === 'rejected'">
+            {{ provider.status === 'Available' ? 'Deactivate' : 'Activate' }}
+          </button>    
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  

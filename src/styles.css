@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    -ns-overflow-style: none;
+    /* background-color: rgba(121, 112, 102, 0.473); */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}

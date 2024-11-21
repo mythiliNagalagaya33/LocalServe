@@ -1,0 +1,45 @@
+/* General layout styles */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Fixed top navbar */
+.admin-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Adjust height as needed */
+  background-color: #fff; /* Background color for navbar */
+  z-index: 1000; /* Ensure navbar is above other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar styles */
+.layout-content {
+  display: flex;
+  height: calc(100vh - 60px); /* Height excluding the navbar */
+  margin-top: 60px; /* Push content below the navbar */
+}
+
+.admin-sidebar {
+  position: fixed;
+  top: 60px; /* Align with the navbar */
+  left: 0;
+  width: 250px; /* Sidebar width */
+  height: calc(100vh - 60px); /* Full height minus the navbar */
+  background-color: #f8f9fa; /* Background color for sidebar */
+  z-index: 999; /* Layer above the main content but below the navbar */
+  overflow-y: auto; /* Scrollable if content exceeds height */
+}
+
+/* Main content styles */
+.main-content {
+  margin-left: 250px; /* Space for the sidebar */
+  flex-grow: 1;
+  padding: 20px; /* Padding for content */
+  overflow-y: auto; /* Scrollable if content exceeds height */
+  background-color: #f1f1f1; /* Background color for content */
+}

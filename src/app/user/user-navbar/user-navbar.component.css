@@ -1,0 +1,161 @@
+.navbar {
+  background-color: #03414D; /* Dark background for the navbar */
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Aligns to the top */
+  left: 0; /* Aligns to the left */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Stays on top of other elements */
+}
+
+h3 {
+  color: white; /* White color for h3 text */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #fff; /* White text color */
+  font-size: 30px;
+  margin-left: 10px; /* Space between logo and brand name */
+}
+
+.navbar-brand:hover {
+  color: #E6F8F6; /* Hover color */
+}
+
+#logo {
+  filter: brightness(1.2) saturate(1.5) hue-rotate(10deg); /* Adjust as needed */
+  border-radius: 10px;
+  height: 50px;
+  margin-left: 20px;
+}
+
+.nav-link {
+  color: #E6F8F6 !important; /* White link color */
+  font-weight: 300;
+  font-size: 25px;
+  margin-right: 50px; /* Space between links */
+}
+
+.nav-link.active {
+  font-weight: bold; /* Active link styling */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.navbar-search {
+  margin-left: 20px; /* Space between logo and search bar */
+  margin-right: 20px; /* Space between search bar and profile link */
+  
+}
+
+.search-container {
+  position: relative; /* Position for absolute elements inside */
+  margin-left: 200px;
+}
+
+.search-container input[type="text"] {
+  width: 500px; /* Increased width for the search bar */
+  padding: 10px 40px; /* Padding for input */
+  border: 1px solid #c4baad; /* Border color */
+  border-radius: 8px; 
+  background-color: #E6F8F6;
+  color: #333; /* Text color */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.search-container input[type="text"]:focus {
+  border-color: #c45e0b; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(201, 196, 192, 0.5); /* Shadow effect */
+  outline: none; /* Remove outline */
+}
+
+.search-icon {
+  position: absolute; /* Position the icon */
+  left: 15px; /* Position the icon inside the input */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for perfect centering */
+  color: #03414D; /* Icon color */
+}
+
+.profile-link .nav-item + .nav-item {
+  margin-left: 15px; /* Space between profile link and others */
+}
+
+.profile-link .nav-link {
+  /* border: 1px solid white;   Border for profile link */
+  padding: 2px 7px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+@media (max-width: 991px) {
+  .nav-links {
+      flex-direction: column; /* Stack links on smaller screens */
+      text-align: center; /* Center text */
+  }
+
+  .navbar-search {
+      margin: 10px 0; /* Space above and below the search bar */
+  }
+}
+
+.profile-item {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  margin-left: 20px; /* Space between profile and previous items */
+}
+
+
+
+
+#profile-link h3 {
+  margin: 0; /* Ensure no extra margin */
+  display: flex; /* Ensure flex for vertical alignment */
+  align-items: center; /* Center items vertically within h3 */
+  color: black; /* Text color for user name */
+}
+
+
+
+
+.profile-icon-circle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #E6F8F6; /* Example color, can be changed */
+  border-radius: 50%;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px; /* Vertically center the text */
+  font-size: 18px;
+  margin-right: 40px;
+}
+.logout{
+  color:black;
+  background-color: #E6F8F6;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.notification-icon {
+  color: #E6F8F6;
+  font-size: 25px;
+  cursor: pointer;
+  margin-right: 38px;
+  position: relative; /* Position relative to anchor the dot */
+}
+
+.notification-dot {
+  position: absolute;
+  top: -1px;  /* Adjust to move it slightly above the icon */
+  right: -3px;  /* Adjust to move it to the right */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+}

@@ -1,0 +1,39 @@
+<br><br>
+
+<main class="main-content">
+    <section id="dashboard">
+      <!-- <h2>Dashboard Overview</h2> -->
+      <div class="dashboard-overview">
+        <div class="card" style="background-color: lightblue;" (click)="onTotalUsersClick()">
+          <h3>Total Users</h3>
+          <p>{{ totalUsers }}</p>
+        </div>
+        <div class="card" style="background-color: lightgreen;" (click)="onTotalProvidersClick()">
+          <h3>Total Providers</h3>
+          <p>{{ totalProviders }}</p>
+        </div>
+        <div class="card" style="background-color: lightcoral;">
+          <h3>Pending Requests</h3>
+          <p>{{ pendingRequests }}</p>
+        </div>
+      </div>
+      <ng-container *ngIf="showUsers">
+        <h3>User List</h3>
+      <ul>
+        <li *ngFor="let user of users">
+          {{ user.user_name }} ({{ user.email }})
+        </li>
+      </ul>
+      </ng-container>
+
+      <ng-container *ngIf="showProviders">
+        <h3>Provider List</h3>
+      <ul>
+        <li *ngFor="let provider of providers">
+          {{ provider.provider_name }} ({{ provider.email }})
+        </li>
+      </ul>
+      </ng-container>
+      
+    </section>
+  </main>
